@@ -16,24 +16,24 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            const BottomNavigationBarItem(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.phone_iphone),
               label: 'Pay',
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.coffee),
               label: 'Order',
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.local_mall),
               label: 'Shop',
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.more_horiz),
               label: 'Other',
             )
@@ -86,18 +86,39 @@ class _MainScreenState extends State<MainScreen> {
                 style: TextStyle(fontSize: 14, color: Colors.green),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 140,
+                width: 230,
+                child: PageView.builder(
+                  itemCount: 2,
+                  itemBuilder: (context, index) => Row(
+                    children: [
+                      Image.asset('assets/images/04_01_cardnews.png',
+                          fit: BoxFit.cover),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: Image.asset('assets/images/04_01_cardnews.png',
+                            fit: BoxFit.cover),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
           ]),
         ),
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(
+        shape: const CircleBorder(),
+        elevation: 0,
+        backgroundColor: Colors.green,
+        child: const Icon(
           Icons.delivery_dining,
           color: Colors.white,
         ),
-        shape: CircleBorder(),
-        elevation: 0,
-        backgroundColor: Colors.green,
       ),
     );
   }
