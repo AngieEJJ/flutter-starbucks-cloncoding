@@ -14,45 +14,43 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(slivers: <Widget>[
-      SliverAppBar(
-        pinned: true,
-        floating: true,
-        expandedHeight: 220,
-        flexibleSpace: FlexibleSpaceBar(
-          background:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Image.asset(
-              "assets/images/01-00_topbanner1.png",
-            ),
-            const Row(
-              children: [
-                MyIndicator(),
-                SizedBox(width: 10),
-                MyScore(),
-              ],
-            ),
-          ]),
-          centerTitle: true,
-          titlePadding: EdgeInsets.zero,
-          title: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 13, vertical: 9),
-              child: OptionMenu()),
+      body: CustomScrollView(slivers: <Widget>[
+        SliverAppBar(
+          pinned: true,
+          floating: true,
+          expandedHeight: 220,
+          flexibleSpace: FlexibleSpaceBar(
+            background:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Image.asset(
+                "assets/images/01-00_topbanner1.png",
+              ),
+              const Row(
+                children: [
+                  MyIndicator(),
+                  SizedBox(width: 10),
+                  MyScore(),
+                ],
+              ),
+            ]),
+            centerTitle: true,
+            titlePadding: EdgeInsets.zero,
+            title: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 13, vertical: 9),
+                child: OptionMenu()),
+          ),
         ),
-      ),
-      SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (BuildContext context, int index) {
-            return const Column(
-              children: [
-                Placeholder(),
-                Placeholder(),
-                Placeholder(),
-              ],
-            );
-          },
+        SliverPadding(
+          padding: EdgeInsets.all(10.0),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              Image.asset('assets/images/01_01_2023_winter_e-frequency.png'),
+              Container(color: Colors.purple, height: 100.0),
+              Container(color: Colors.green, height: 200.0),
+            ]),
+          ),
         ),
-      ),
-    ]));
+      ]),
+    );
   }
 }
