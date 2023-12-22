@@ -14,6 +14,30 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem>[
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.phone_iphone),
+              label: 'Pay',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.coffee),
+              label: 'Order',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.local_mall),
+              label: 'Shop',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.more_horiz),
+              label: 'Other',
+            )
+          ]),
       body: CustomScrollView(slivers: <Widget>[
         SliverAppBar(
           pinned: true,
@@ -40,17 +64,41 @@ class _MainScreenState extends State<MainScreen> {
                 child: OptionMenu()),
           ),
         ),
-        SliverPadding(
-          padding: EdgeInsets.all(10.0),
-          sliver: SliverList(
-            delegate: SliverChildListDelegate([
-              Image.asset('assets/images/01_01_2023_winter_e-frequency.png'),
-              Container(color: Colors.purple, height: 100.0),
-              Container(color: Colors.green, height: 200.0),
-            ]),
-          ),
+        SliverList(
+          delegate: SliverChildListDelegate([
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset(
+                  'assets/images/01_01_2023_winter_e-frequency.png'),
+            ),
+            Image.asset('assets/images/02_01_siren_order.png'),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset('assets/images/03_01_chrismas_event.png'),
+            ),
+            const ListTile(
+              title: Text(
+                'What\'s New',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              trailing: Text(
+                'See all',
+                style: TextStyle(fontSize: 14, color: Colors.green),
+              ),
+            ),
+          ]),
         ),
       ]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.delivery_dining,
+          color: Colors.white,
+        ),
+        shape: CircleBorder(),
+        elevation: 0,
+        backgroundColor: Colors.green,
+      ),
     );
   }
 }
