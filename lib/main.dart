@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starbucks_cloncoding/main_screen.dart';
+import 'package:starbucks_cloncoding/view/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
