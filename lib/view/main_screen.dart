@@ -86,27 +86,28 @@ class _MainScreenState extends State<MainScreen> {
                 style: TextStyle(fontSize: 14, color: Colors.green),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                height: 140,
-                width: 230,
-                child: PageView.builder(
-                  itemCount: 2,
-                  itemBuilder: (context, index) => Row(
-                    children: [
-                      Image.asset('assets/images/04_01_cardnews.png',
-                          fit: BoxFit.cover),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: Image.asset('assets/images/04_01_cardnews.png',
-                            fit: BoxFit.cover),
+            Container(
+              height: 300,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        height: 280,
+                        width: 300,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/04_01_cardnews.png',
+                            ),
+                            Text('dd')
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-            )
+                    );
+                  }),
+            ),
           ]),
         ),
       ]),

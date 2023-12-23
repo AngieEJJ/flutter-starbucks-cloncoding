@@ -26,8 +26,6 @@ class MyIndicator extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 0,
-                bottom: 0,
                 child: Container(
                   width: 100,
                   height: 7,
