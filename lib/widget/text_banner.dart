@@ -1,22 +1,24 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class TextBanner extends StatelessWidget {
-  const TextBanner({
-    Key? key,
-  }) : super(key: key);
+  final String text;
+  final String textButton;
+
+  const TextBanner({super.key, required this.text, required this.textButton});
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
+    return ListTile(
       title: Text(
-        'What\'s New',
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        text,
+        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
-      trailing: Text(
-        'See all',
-        style: TextStyle(fontSize: 14, color: Colors.green),
-      ),
+      trailing: TextButton(
+          onPressed: () {},
+          child: Text(
+            textButton,
+            style: const TextStyle(fontSize: 14, color: Colors.green),
+          )),
     );
   }
 }
