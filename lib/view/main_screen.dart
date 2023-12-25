@@ -5,7 +5,7 @@ import 'package:starbucks_cloncoding/widget/my_indicator.dart';
 import 'package:starbucks_cloncoding/widget/my_score.dart';
 import 'package:starbucks_cloncoding/widget/option_menu.dart';
 import 'package:starbucks_cloncoding/widget/second_sirenorder_banner.dart';
-import 'package:starbucks_cloncoding/widget/text_banner.dart';
+import 'package:starbucks_cloncoding/model/text_banner.dart';
 import 'package:starbucks_cloncoding/widget/third_christmas_banner.dart';
 
 class MainScreen extends StatefulWidget {
@@ -75,7 +75,7 @@ class _MainScreenState extends State<MainScreen> {
             const SecondSirenorderBanner(),
             const ThirdChristmasBanner(),
             const TextBanner(text: 'What\'s New', textButton: 'See all'),
-            CardNews(),
+            const CardNews(),
             const TextBanner(text: '고객님을 위한 추천 메뉴', textButton: ''),
           ]),
         ),
