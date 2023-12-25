@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:starbucks_cloncoding/widget/card_news.dart';
+import 'package:starbucks_cloncoding/widget/first_event_banner.dart';
 import 'package:starbucks_cloncoding/widget/my_indicator.dart';
 import 'package:starbucks_cloncoding/widget/my_score.dart';
 import 'package:starbucks_cloncoding/widget/option_menu.dart';
+import 'package:starbucks_cloncoding/widget/second_sirenorder_banner.dart';
+import 'package:starbucks_cloncoding/widget/text_banner.dart';
+import 'package:starbucks_cloncoding/widget/third_christmas_banner.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -66,48 +71,11 @@ class _MainScreenState extends State<MainScreen> {
         ),
         SliverList(
           delegate: SliverChildListDelegate([
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset(
-                  'assets/images/01_01_2023_winter_e-frequency.png'),
-            ),
-            Image.asset('assets/images/02_01_siren_order.png'),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset('assets/images/03_01_chrismas_event.png'),
-            ),
-            const ListTile(
-              title: Text(
-                'What\'s New',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              trailing: Text(
-                'See all',
-                style: TextStyle(fontSize: 14, color: Colors.green),
-              ),
-            ),
-            Container(
-              height: 300,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        height: 280,
-                        width: 300,
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/images/04_01_cardnews.png',
-                            ),
-                            Text('dd')
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
-            ),
+            const FirstEventBanner(),
+            const SecondSirenorderBanner(),
+            const ThirdChristmasBanner(),
+            const TextBanner(),
+            CardNews(),
           ]),
         ),
       ]),
